@@ -7,7 +7,8 @@
     "test": "npx jest",
     "build": "npx webpack --mode production",
     "dev": "npx webpack serve --mode development",
-    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx --fix src/"
+    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx --fix src/",
+    "calc": "npx ts-node src"
   },
   "husky": {
     "hooks": {
@@ -33,6 +34,7 @@
     "husky": "^6.0.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.3",
     "webpack": "^5.30.0",
     "webpack-cli": "^4.6.0",

@@ -1,5 +1,29 @@
-console.log("hello1");
+import { createInterface } from "readline";
 
-function foo(a: number, b: number) {
-  return a + b;
+import { runner } from "./runner";
+
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+const question = (): Promise<void> =>
+  new Promise((resolve) => {
+    rl.question("> ", (answer: string) => {
+      const result = runner(answer);
+
+      if (result) {
+        console.log(`Result: ${result}`);
+      }
+
+      resolve();
+    });
+  });
+
+async function app(): Promise<null> {
+  while (true) {
+    await question();
+  }
 }
+
+app();
